@@ -12,8 +12,8 @@
 
 - [About](#about)
 - [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
+- [Technologies](#-technologies)
+- [Installation](#-installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
@@ -157,7 +157,7 @@ bun start
 
 ## 📁 Project Structure
 
-```
+```bash
 x-apig/
 ├── src/
 │   ├── config/           # Application configuration
@@ -207,11 +207,12 @@ GET /health
 
 The gateway forwards requests with the pattern:
 
-```
+```bash
 /api/{service}/{domain}/{function}
 ```
 
 **Examples:**
+
 - `/api/sso/auth/login` → forwarded to SSO service
 - `/api/core/user/profile` → forwarded to Core service
 - `/api/chat/message/send` → forwarded to Chat service
@@ -229,21 +230,25 @@ The gateway forwards requests with the pattern:
 ## 🔧 Supported Services
 
 ### 1. SSO Service
+
 - **Prefix**: `/api/sso`
 - **Function**: User authentication and authorization
 - **Endpoints**: `/api/sso/{domain}/{function}`
 
 ### 2. Core Service
+
 - **Prefix**: `/api/core`
 - **Function**: Core application services
 - **Endpoints**: `/api/core/{domain}/{function}`
 
 ### 3. Chat Service
+
 - **Prefix**: `/api/chat`
 - **Function**: Messaging and chat services
 - **Endpoints**: `/api/chat/{domain}/{function}`
 
 ### 4. Islamic Service
+
 - **Prefix**: `/api/islamic`
 - **Function**: Islamic-related services
 - **Endpoints**: `/api/islamic/{domain}/{function}`
@@ -251,16 +256,19 @@ The gateway forwards requests with the pattern:
 ## 🔄 Middleware
 
 ### 1. CORS Middleware
+
 - Handles Cross-Origin Resource Sharing
 - Dynamic configuration through environment variables
 - Supports preflight requests
 
 ### 2. Logger Middleware
+
 - Logs all HTTP requests
 - Information includes method, URL, and response time
 - Easy-to-read log format
 
 ### 3. Error Handler
+
 - Global error handling
 - Consistent error responses
 - Debug information in development mode
@@ -340,10 +348,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 👨‍💻 Author
 
-**Wahyu Agus Arifin (ItPohgero)**
+### Wahyu Agus Arifin (ItPohgero)
 
 - 🌐 GitHub: [@ItPohgero](https://github.com/ItPohgero)
-- 📧 Email: wahyu@example.com
+- 📧 Email: <itpohgero@gmail.com>
 - 🐦 Twitter: [@ItPohgero](https://twitter.com/ItPohgero)
 
 ---

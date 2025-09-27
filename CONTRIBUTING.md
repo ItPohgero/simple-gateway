@@ -50,20 +50,27 @@ Please follow these steps to have your contribution considered by the maintainer
 
 1. Fork the repo on GitHub
 2. Clone your fork locally:
+
    ```bash
    git clone https://github.com/your-username/Simple-Gateway.git
    cd Simple-Gateway
    ```
+
 3. Install dependencies:
+
    ```bash
    bun install
    ```
+
 4. Copy environment file:
+
    ```bash
    cp .env.example .env
    ```
+
 5. Make your changes
 6. Test your changes:
+
    ```bash
    bun run dev
    ```
@@ -71,20 +78,26 @@ Please follow these steps to have your contribution considered by the maintainer
 ### Making Changes
 
 1. Create a new branch from `main`:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
+
 2. Make your changes
 3. Write or update tests as necessary
 4. Update documentation if needed
 5. Commit your changes:
+
    ```bash
    git commit -m "Add some feature"
    ```
+
 6. Push to your fork:
+
    ```bash
    git push origin feature/your-feature-name
    ```
+
 7. Create a Pull Request
 
 ## Styleguides
@@ -129,7 +142,7 @@ Please follow these steps to have your contribution considered by the maintainer
 
 When adding new files, please follow the existing structure:
 
-```
+```bash
 src/
 ├── config/           # Configuration files
 ├── constants/        # Application constants

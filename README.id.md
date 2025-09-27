@@ -8,20 +8,20 @@
 
 ## 📖 Daftar Isi
 
-- [Tentang](#tentang)
-- [Fitur](#fitur)
-- [Teknologi](#teknologi)
-- [Instalasi](#instalasi)
-- [Konfigurasi](#konfigurasi)
-- [Penggunaan](#penggunaan)
-- [Struktur Proyek](#struktur-proyek)
-- [API Endpoints](#api-endpoints)
-- [Layanan yang Didukung](#layanan-yang-didukung)
-- [Middleware](#middleware)
-- [Development](#development)
-- [Kontribusi](#kontribusi)
-- [Lisensi](#lisensi)
-- [Author](#author)
+- [Tentang](#-tentang)
+- [Fitur](#-fitur)
+- [Teknologi](#-teknologi)
+- [Instalasi](#-instalasi)
+- [Konfigurasi](#️-konfigurasi)
+- [Penggunaan](#-penggunaan)
+- [Struktur Proyek](#-struktur-proyek)
+- [API Endpoints](#-api-endpoints)
+- [Layanan yang Didukung](#-layanan-yang-didukung)
+- [Middleware](#-middleware)
+- [Development](#-development)
+- [Kontribusi](#-kontribusi)
+- [Lisensi](#-lisensi)
+- [Author](#-author)
 
 ## 📋 Tentang
 
@@ -62,22 +62,26 @@ Simple Gateway adalah solusi API Gateway ringan yang dirancang untuk mengelola d
 ### Langkah Instalasi
 
 1. **Clone repository**
+
    ```bash
    git clone https://github.com/ItPohgero/Simple-Gateway.git
    cd Simple-Gateway
    ```
 
 2. **Install dependencies**
+
    ```bash
    bun install
    ```
 
 3. **Setup environment variables**
+
    ```bash
    cp .env.example .env
    ```
 
 4. **Edit file .env** sesuai dengan konfigurasi Anda:
+
    ```env
    PORT=3000
    NODE_ENV=development
@@ -151,7 +155,7 @@ bun start
 
 ## 📁 Struktur Proyek
 
-```
+```bash
 x-apig/
 ├── src/
 │   ├── config/           # Konfigurasi aplikasi
@@ -186,6 +190,7 @@ GET /health
 ```
 
 **Response:**
+
 ```json
 {
   "status": "healthy",
@@ -200,11 +205,12 @@ GET /health
 
 Gateway meneruskan permintaan dengan pola:
 
-```
+```bash
 /api/{service}/{domain}/{function}
 ```
 
 **Contoh:**
+
 - `/api/sso/auth/login` → diteruskan ke SSO service
 - `/api/core/user/profile` → diteruskan ke Core service
 - `/api/chat/message/send` → diteruskan ke Chat service
@@ -222,21 +228,25 @@ Gateway meneruskan permintaan dengan pola:
 ## 🔧 Layanan yang Didukung
 
 ### 1. SSO Service
+
 - **Prefix**: `/api/sso`
 - **Fungsi**: Autentikasi dan otorisasi pengguna
 - **Endpoints**: `/api/sso/{domain}/{function}`
 
 ### 2. Core Service
+
 - **Prefix**: `/api/core`
 - **Fungsi**: Layanan inti aplikasi
 - **Endpoints**: `/api/core/{domain}/{function}`
 
 ### 3. Chat Service
+
 - **Prefix**: `/api/chat`
 - **Fungsi**: Layanan pesan dan chat
 - **Endpoints**: `/api/chat/{domain}/{function}`
 
 ### 4. Islamic Service
+
 - **Prefix**: `/api/islamic`
 - **Fungsi**: Layanan terkait Islam
 - **Endpoints**: `/api/islamic/{domain}/{function}`
@@ -244,16 +254,19 @@ Gateway meneruskan permintaan dengan pola:
 ## 🔄 Middleware
 
 ### 1. CORS Middleware
+
 - Menghandle Cross-Origin Resource Sharing
 - Konfigurasi dinamis melalui environment variables
 - Mendukung preflight requests
 
 ### 2. Logger Middleware
+
 - Logging semua permintaan HTTP
 - Informasi method, URL, dan waktu respons
 - Format log yang mudah dibaca
 
 ### 3. Error Handler
+
 - Global error handling
 - Response error yang konsisten
 - Debug information di development mode
@@ -263,6 +276,7 @@ Gateway meneruskan permintaan dengan pola:
 ### Menambahkan Service Baru
 
 1. **Update konfigurasi** di `src/config/index.ts`:
+
    ```typescript
    services: {
      // ... existing services
@@ -274,6 +288,7 @@ Gateway meneruskan permintaan dengan pola:
    ```
 
 2. **Tambahkan konstanta** di `src/constants/services.ts`:
+
    ```typescript
    export const SERVICE_ROUTES = [
      // ... existing routes
@@ -282,6 +297,7 @@ Gateway meneruskan permintaan dengan pola:
    ```
 
 3. **Update environment variables**:
+
    ```env
    NEW_SERVICE_URL=https://your-new-service.com
    ```
@@ -330,10 +346,10 @@ Proyek ini dilisensikan under MIT License. Lihat file [LICENSE](LICENSE) untuk d
 
 ## 👨‍💻 Author
 
-**Wahyu Agus Arifin (ItPohgero)**
+### Wahyu Agus Arifin (ItPohgero)
 
 - 🌐 GitHub: [@ItPohgero](https://github.com/ItPohgero)
-- 📧 Email: wahyu@example.com
+- 📧 Email: <itpohgero@gmail.com>
 - 🐦 Twitter: [@ItPohgero](https://twitter.com/ItPohgero)
 
 ---

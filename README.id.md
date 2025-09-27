@@ -4,86 +4,80 @@
 [![GitHub](https://img.shields.io/badge/GitHub-ItPohgero-black?style=flat-square&logo=github)](https://github.com/ItPohgero)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-> A lightweight API Gateway built with Hono.js and Bun for managing and proxying requests to various microservices.
+> API Gateway sederhana yang dibangun dengan Hono.js dan Bun untuk mengelola dan meneruskan permintaan ke berbagai layanan mikro.
 
-**[🇮🇩 Indonesian Version](README.id.md)**
+## 📖 Daftar Isi
 
-## 📖 Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
+- [Tentang](#tentang)
+- [Fitur](#fitur)
+- [Teknologi](#teknologi)
+- [Instalasi](#instalasi)
+- [Konfigurasi](#konfigurasi)
+- [Penggunaan](#penggunaan)
+- [Struktur Proyek](#struktur-proyek)
 - [API Endpoints](#api-endpoints)
-- [Supported Services](#supported-services)
+- [Layanan yang Didukung](#layanan-yang-didukung)
 - [Middleware](#middleware)
 - [Development](#development)
-- [Contributing](#contributing)
-- [License](#license)
+- [Kontribusi](#kontribusi)
+- [Lisensi](#lisensi)
 - [Author](#author)
 
-## 📋 About
+## 📋 Tentang
 
-Simple Gateway is a lightweight API Gateway solution designed to manage and proxy HTTP requests to various microservices. Built with modern technologies like Hono.js and Bun, this gateway provides high performance with minimal overhead.
+Simple Gateway adalah solusi API Gateway ringan yang dirancang untuk mengelola dan meneruskan permintaan HTTP ke berbagai layanan mikro. Dibangun dengan teknologi modern seperti Hono.js dan Bun, gateway ini menyediakan performa tinggi dengan overhead yang minimal.
 
-### 🎯 Goals
+### 🎯 Tujuan
 
-- Simplify communication between microservices
-- Provide a single entry point for all APIs
-- Centrally manage CORS and logging
-- Provide monitoring and health checks for all services
+- Menyederhanakan komunikasi antar layanan mikro
+- Menyediakan titik masuk tunggal untuk semua API
+- Mengelola CORS dan logging secara terpusat
+- Memberikan monitoring dan health check untuk semua layanan
 
-## ✨ Features
+## ✨ Fitur
 
-- 🔄 **Request Proxying**: Forward requests to appropriate services
-- 🚦 **Health Check**: Monitor gateway and service health status
-- 🔐 **CORS Support**: Flexible CORS configuration
-- 📊 **Logging**: Comprehensive request and response logging
-- ⚡ **High Performance**: Built with Bun and Hono for optimal performance
-- 🛡️ **Error Handling**: Robust error handling
-- 🔧 **Hot Reload**: Development with hot reload
+- 🔄 **Proxy Request**: Meneruskan permintaan ke layanan yang sesuai
+- 🚦 **Health Check**: Monitoring status kesehatan gateway dan layanan
+- 🔐 **CORS Support**: Konfigurasi CORS yang fleksibel
+- 📊 **Logging**: Logging permintaan dan respons yang komprehensif
+- ⚡ **High Performance**: Dibangun dengan Bun dan Hono untuk performa optimal
+- 🛡️ **Error Handling**: Penanganan error yang robust
+- 🔧 **Hot Reload**: Development dengan hot reload
 - 📝 **TypeScript**: Full TypeScript support
 
-## 🛠 Technologies
+## 🛠 Teknologi
 
-- **Runtime**: [Bun](https://bun.sh/) - Fast JavaScript runtime
-- **Framework**: [Hono.js](https://hono.dev/) - Lightweight and fast web framework
+- **Runtime**: [Bun](https://bun.sh/) - Runtime JavaScript yang cepat
+- **Framework**: [Hono.js](https://hono.dev/) - Web framework yang ringan dan cepat
 - **Language**: TypeScript
 - **Package Manager**: Bun
 
-## 📦 Installation
+## 📦 Instalasi
 
-### Prerequisites
+### Prasyarat
 
 - [Bun](https://bun.sh/) >= 1.0.0
-- Node.js >= 18 (optional, for compatibility)
+- Node.js >= 18 (opsional, untuk kompatibilitas)
 
-### Installation Steps
+### Langkah Instalasi
 
-1. **Clone the repository**
-
+1. **Clone repository**
    ```bash
    git clone https://github.com/ItPohgero/Simple-Gateway.git
    cd Simple-Gateway
    ```
 
 2. **Install dependencies**
-
    ```bash
    bun install
    ```
 
 3. **Setup environment variables**
-
    ```bash
    cp .env.example .env
    ```
 
-4. **Edit the .env file** according to your configuration:
-
+4. **Edit file .env** sesuai dengan konfigurasi Anda:
    ```env
    PORT=3000
    NODE_ENV=development
@@ -98,23 +92,23 @@ Simple Gateway is a lightweight API Gateway solution designed to manage and prox
    CORS_ORIGIN=http://localhost:3000,https://yourdomain.com
    ```
 
-## ⚙️ Configuration
+## ⚙️ Konfigurasi
 
-The gateway uses environment variable-based configuration. Here are the available configurations:
+Gateway menggunakan konfigurasi berbasis environment variables. Berikut adalah konfigurasi yang tersedia:
 
 ### Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `PORT` | Server port | `3000` |
+| `PORT` | Port server | `3000` |
 | `NODE_ENV` | Environment mode | `development` |
-| `SSO_SERVICE_URL` | SSO service URL | `https://sso.com` |
-| `CORE_SERVICE_URL` | Core service URL | `https://core.com` |
-| `CHAT_SERVICE_URL` | Chat service URL | `https://chat.com` |
-| `ISLAMIC_SERVICE_URL` | Islamic service URL | `https://islamic.com` |
+| `SSO_SERVICE_URL` | URL layanan SSO | `https://sso.com` |
+| `CORE_SERVICE_URL` | URL layanan Core | `https://core.com` |
+| `CHAT_SERVICE_URL` | URL layanan Chat | `https://chat.com` |
+| `ISLAMIC_SERVICE_URL` | URL layanan Islamic | `https://islamic.com` |
 | `CORS_ORIGIN` | CORS allowed origins | `*` |
 
-### Configuration Structure
+### Struktur Konfigurasi
 
 ```typescript
 interface ServiceConfig {
@@ -133,54 +127,54 @@ interface GatewayConfig {
 }
 ```
 
-## 🚀 Usage
+## 🚀 Penggunaan
 
-### Running Development Server
+### Menjalankan Development Server
 
 ```bash
 bun run dev
 ```
 
-The gateway will run at `http://localhost:3000`
+Gateway akan berjalan di `http://localhost:3000`
 
-### Build for Production
+### Build untuk Production
 
 ```bash
 bun build
 ```
 
-### Running in Production
+### Menjalankan di Production
 
 ```bash
 bun start
 ```
 
-## 📁 Project Structure
+## 📁 Struktur Proyek
 
 ```
 x-apig/
 ├── src/
-│   ├── config/           # Application configuration
+│   ├── config/           # Konfigurasi aplikasi
 │   │   └── index.ts
-│   ├── constants/        # Constants and service definitions
+│   ├── constants/        # Konstanta dan definisi layanan
 │   │   └── services.ts
-│   ├── middleware/       # Middleware for CORS and logging
+│   ├── middleware/       # Middleware untuk CORS dan logging
 │   │   ├── cors.ts
 │   │   └── logger.ts
 │   ├── routes/           # Route handlers
 │   │   └── gateway.ts
-│   ├── services/         # Proxy services
+│   ├── services/         # Layanan proxy
 │   │   ├── proxy.ts
 │   │   └── proxy-backup.ts
 │   ├── types/            # TypeScript type definitions
 │   │   └── api.ts
 │   ├── utils/            # Utility functions
 │   │   └── response.ts
-│   └── index.ts          # Application entry point
-├── bun.lock             # Dependency lock file
+│   └── index.ts          # Entry point aplikasi
+├── bun.lock             # Lock file dependencies
 ├── package.json         # Package configuration
 ├── tsconfig.json        # TypeScript configuration
-└── README.md           # Documentation
+└── README.md           # Dokumentasi
 ```
 
 ## 📡 API Endpoints
@@ -192,7 +186,6 @@ GET /health
 ```
 
 **Response:**
-
 ```json
 {
   "status": "healthy",
@@ -205,17 +198,17 @@ GET /health
 
 ### Service Proxy
 
-The gateway forwards requests with the pattern:
+Gateway meneruskan permintaan dengan pola:
 
 ```
 /api/{service}/{domain}/{function}
 ```
 
-**Examples:**
-- `/api/sso/auth/login` → forwarded to SSO service
-- `/api/core/user/profile` → forwarded to Core service
-- `/api/chat/message/send` → forwarded to Chat service
-- `/api/islamic/prayer/times` → forwarded to Islamic service
+**Contoh:**
+- `/api/sso/auth/login` → diteruskan ke SSO service
+- `/api/core/user/profile` → diteruskan ke Core service
+- `/api/chat/message/send` → diteruskan ke Chat service
+- `/api/islamic/prayer/times` → diteruskan ke Islamic service
 
 ### Service Routes
 
@@ -226,51 +219,50 @@ The gateway forwards requests with the pattern:
 | `/api/chat` | Chat Service | `CHAT_SERVICE_URL` |
 | `/api/islamic` | Islamic Service | `ISLAMIC_SERVICE_URL` |
 
-## 🔧 Supported Services
+## 🔧 Layanan yang Didukung
 
 ### 1. SSO Service
 - **Prefix**: `/api/sso`
-- **Function**: User authentication and authorization
+- **Fungsi**: Autentikasi dan otorisasi pengguna
 - **Endpoints**: `/api/sso/{domain}/{function}`
 
 ### 2. Core Service
 - **Prefix**: `/api/core`
-- **Function**: Core application services
+- **Fungsi**: Layanan inti aplikasi
 - **Endpoints**: `/api/core/{domain}/{function}`
 
 ### 3. Chat Service
 - **Prefix**: `/api/chat`
-- **Function**: Messaging and chat services
+- **Fungsi**: Layanan pesan dan chat
 - **Endpoints**: `/api/chat/{domain}/{function}`
 
 ### 4. Islamic Service
 - **Prefix**: `/api/islamic`
-- **Function**: Islamic-related services
+- **Fungsi**: Layanan terkait Islam
 - **Endpoints**: `/api/islamic/{domain}/{function}`
 
 ## 🔄 Middleware
 
 ### 1. CORS Middleware
-- Handles Cross-Origin Resource Sharing
-- Dynamic configuration through environment variables
-- Supports preflight requests
+- Menghandle Cross-Origin Resource Sharing
+- Konfigurasi dinamis melalui environment variables
+- Mendukung preflight requests
 
 ### 2. Logger Middleware
-- Logs all HTTP requests
-- Information includes method, URL, and response time
-- Easy-to-read log format
+- Logging semua permintaan HTTP
+- Informasi method, URL, dan waktu respons
+- Format log yang mudah dibaca
 
 ### 3. Error Handler
 - Global error handling
-- Consistent error responses
-- Debug information in development mode
+- Response error yang konsisten
+- Debug information di development mode
 
 ## 🛠 Development
 
-### Adding a New Service
+### Menambahkan Service Baru
 
-1. **Update configuration** in `src/config/index.ts`:
-
+1. **Update konfigurasi** di `src/config/index.ts`:
    ```typescript
    services: {
      // ... existing services
@@ -281,8 +273,7 @@ The gateway forwards requests with the pattern:
    }
    ```
 
-2. **Add constant** in `src/constants/services.ts`:
-
+2. **Tambahkan konstanta** di `src/constants/services.ts`:
    ```typescript
    export const SERVICE_ROUTES = [
      // ... existing routes
@@ -291,7 +282,6 @@ The gateway forwards requests with the pattern:
    ```
 
 3. **Update environment variables**:
-
    ```env
    NEW_SERVICE_URL=https://your-new-service.com
    ```
@@ -311,32 +301,32 @@ curl http://localhost:3000/api/sso/auth/login \
 
 ### Debugging
 
-For detailed debugging, set the environment:
+Untuk debugging yang lebih detail, set environment:
 
 ```bash
 NODE_ENV=development bun run dev
 ```
 
-## 🤝 Contributing
+## 🤝 Kontribusi
 
-Contributions are welcome! Please follow these steps:
+Kontribusi sangat diterima! Silakan ikuti langkah berikut:
 
-1. Fork this repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork repository ini
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan Anda (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
 ### Development Guidelines
 
-- Use TypeScript for type safety
+- Gunakan TypeScript untuk type safety
 - Follow existing code style
-- Add tests for new features
-- Update documentation when necessary
+- Tambahkan tests untuk fitur baru
+- Update dokumentasi jika diperlukan
 
-## 📄 License
+## 📄 Lisensi
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Proyek ini dilisensikan under MIT License. Lihat file [LICENSE](LICENSE) untuk detail.
 
 ## 👨‍💻 Author
 
@@ -348,15 +338,15 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-⭐ If this project helps you, please give a star to this repository!
+⭐ Jika proyek ini membantu Anda, berikan star pada repository ini!
 
 ## 📞 Support
 
-If you find bugs or have questions, please:
+Jika Anda menemukan bug atau memiliki pertanyaan, silakan:
 
-1. Create an issue at [GitHub Issues](https://github.com/ItPohgero/Simple-Gateway/issues)
+1. Buat issue di [GitHub Issues](https://github.com/ItPohgero/Simple-Gateway/issues)
 2. Contact via email
-3. Discuss in GitHub Discussions
+3. Diskusi di GitHub Discussions
 
 ## 🔮 Roadmap
 
@@ -364,7 +354,7 @@ If you find bugs or have questions, please:
 - [ ] Authentication middleware
 - [ ] Request/Response caching
 - [ ] Load balancing
-- [ ] Metrics and monitoring
+- [ ] Metrics dan monitoring
 - [ ] Docker support
 - [ ] API versioning
 - [ ] Request validation
